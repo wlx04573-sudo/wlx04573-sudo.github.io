@@ -284,34 +284,73 @@
         font-weight: 700;
       }
 
-      .qq-group-link {
-        display: flex;
+      .qq-ad-card {
+        display: grid;
+        grid-template-columns: 48px minmax(0, 1fr) auto;
         align-items: center;
-        justify-content: space-between;
-        gap: 12px;
+        gap: 12px 14px;
         margin-bottom: 12px;
-        padding: 12px 14px;
-        border: 1px solid rgba(36, 80, 90, 0.34);
+        padding: 14px;
+        border: 1px solid rgba(36, 80, 90, 0.32);
+        border-left: 5px solid var(--accent);
+        border-radius: var(--radius);
+        background: linear-gradient(90deg, #e3f0f2, #ffffff);
+        color: var(--text);
+        text-decoration: none;
+      }
+
+      .qq-ad-card:hover {
+        border-color: var(--accent);
+        background: linear-gradient(90deg, #d8edf0, #ffffff);
+      }
+
+      .qq-ad-icon {
+        display: grid;
+        width: 48px;
+        height: 48px;
+        place-items: center;
         border-radius: var(--radius);
         background: var(--accent);
         color: #fff;
-        text-decoration: none;
+      }
+
+      .qq-ad-icon svg {
+        width: 27px;
+        height: 27px;
+        fill: currentColor;
+      }
+
+      .qq-ad-copy strong {
+        display: block;
+        color: var(--accent-strong);
+        font-size: 1rem;
+        line-height: 1.35;
         font-weight: 800;
       }
 
-      .qq-group-link:hover {
+      .qq-ad-copy span {
+        display: block;
+        margin-top: 4px;
+        color: var(--muted);
+        font-size: 0.88rem;
+        line-height: 1.45;
+      }
+
+      .qq-ad-action {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 34px;
+        padding: 7px 12px;
+        border-radius: 6px;
+        background: var(--accent);
+        color: #fff;
+        font-weight: 800;
+        white-space: nowrap;
+      }
+
+      .qq-ad-card:hover .qq-ad-action {
         background: var(--accent-strong);
-      }
-
-      .qq-group-link span {
-        overflow-wrap: anywhere;
-      }
-
-      .qq-group-link svg {
-        width: 20px;
-        height: 20px;
-        flex: 0 0 auto;
-        fill: currentColor;
       }
 
       .input-actions {
@@ -538,6 +577,15 @@
           grid-template-columns: 1fr;
         }
 
+        .qq-ad-card {
+          grid-template-columns: 48px minmax(0, 1fr);
+        }
+
+        .qq-ad-action {
+          grid-column: 1 / -1;
+          width: 100%;
+        }
+
         .col-expiry,
         .col-type,
         td:nth-child(3),
@@ -610,11 +658,17 @@
               </p>
               <p class="session-warning">这段 JSON 包含 accessToken 和 sessionToken，等同敏感登录凭证，不要发给别人。</p>
             </div>
-            <a class="qq-group-link" href="https://qm.qq.com/q/nnZVyudOPC" target="_blank" rel="noreferrer">
-              <span>点击进入QQ群就可</span>
-              <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M13.2 5.3a1 1 0 0 1 1.4 0l5.9 5.9a1 1 0 0 1 0 1.4l-5.9 5.9a1 1 0 0 1-1.4-1.4l4.2-4.2H4.2a1 1 0 1 1 0-2h13.2l-4.2-4.2a1 1 0 0 1 0-1.4Z" />
-              </svg>
+            <a class="qq-ad-card" href="https://qm.qq.com/q/nnZVyudOPC" target="_blank" rel="noreferrer" aria-label="点击进入QQ群就可">
+              <span class="qq-ad-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <path d="M8.7 10.5a2.4 2.4 0 1 0 0-4.8 2.4 2.4 0 0 0 0 4.8Zm6.6 0a2.4 2.4 0 1 0 0-4.8 2.4 2.4 0 0 0 0 4.8ZM3.4 18.3c0-3.2 2.2-5.4 5.3-5.4s5.3 2.2 5.3 5.4v.5H3.4v-.5Zm9.7-4.7a6.5 6.5 0 0 1 2.2 4.7v.5h5.3v-.5c0-3.2-2.2-5.4-5.3-5.4-.8 0-1.5.2-2.2.7Z" />
+                </svg>
+              </span>
+              <span class="qq-ad-copy">
+                <strong>点击进入QQ群就可</strong>
+                <span>点击进入QQ群就可</span>
+              </span>
+              <span class="qq-ad-action">立即进入</span>
             </a>
             <input class="hidden" id="file-input" type="file" accept=".json,application/json" multiple />
             <div class="input-actions">
