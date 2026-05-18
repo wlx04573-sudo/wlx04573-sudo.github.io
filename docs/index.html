@@ -284,6 +284,36 @@
         font-weight: 700;
       }
 
+      .qq-group-link {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        margin-bottom: 12px;
+        padding: 12px 14px;
+        border: 1px solid rgba(36, 80, 90, 0.34);
+        border-radius: var(--radius);
+        background: var(--accent);
+        color: #fff;
+        text-decoration: none;
+        font-weight: 800;
+      }
+
+      .qq-group-link:hover {
+        background: var(--accent-strong);
+      }
+
+      .qq-group-link span {
+        overflow-wrap: anywhere;
+      }
+
+      .qq-group-link svg {
+        width: 20px;
+        height: 20px;
+        flex: 0 0 auto;
+        fill: currentColor;
+      }
+
       .input-actions {
         display: flex;
         flex-wrap: wrap;
@@ -580,6 +610,12 @@
               </p>
               <p class="session-warning">这段 JSON 包含 accessToken 和 sessionToken，等同敏感登录凭证，不要发给别人。</p>
             </div>
+            <a class="qq-group-link" href="https://qm.qq.com/q/nnZVyudOPC" target="_blank" rel="noreferrer">
+              <span>点击进入QQ群就可</span>
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M13.2 5.3a1 1 0 0 1 1.4 0l5.9 5.9a1 1 0 0 1 0 1.4l-5.9 5.9a1 1 0 0 1-1.4-1.4l4.2-4.2H4.2a1 1 0 1 1 0-2h13.2l-4.2-4.2a1 1 0 0 1 0-1.4Z" />
+              </svg>
+            </a>
             <input class="hidden" id="file-input" type="file" accept=".json,application/json" multiple />
             <div class="input-actions">
               <button class="button button-secondary" id="pick-files" type="button">选择文件</button>
