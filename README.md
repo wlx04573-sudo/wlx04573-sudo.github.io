@@ -4,7 +4,7 @@
 
 ## 在线使用
 
-### [**》》 点我直接使用 《《**](https://json.chatai.codes/)
+### [**》》 直接打开站点 《《**](https://wlx04573-sudo.github.io/)
 
 ## 使用提示
 
